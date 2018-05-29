@@ -5,9 +5,15 @@
         
         controller: function ($scope) {
                 $scope.movie = [
-                    {type: "Genre", options: ["Action", "Comedy", "Romance", "Thriller"]},
-                    {type: "Length", options: ["1-1:30 Hours", "1:30-2 Hours"]},
+                    {type: "Genre"},
+                    {type: "Length"},
                     {type: "Rating"}
+                ];
+                $scope.genre = [
+                    {option: "Action"},
+                    {option: "Comedy"},
+                    {option: "Romance"},
+                    {option: "Thriller"}
                 ];
         }
     }
