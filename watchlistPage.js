@@ -2,5 +2,5 @@
 {
     angular
         .module("movie")
-        .angular("watchListPage", watchListPage);
+        .component("watchListPage", watchListPage);
 }
