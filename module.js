@@ -1,5 +1,5 @@
 "use strict";
 {
     angular
-        .module("movie", [])
+        .module("movie", ["ngRoute"])
 }
