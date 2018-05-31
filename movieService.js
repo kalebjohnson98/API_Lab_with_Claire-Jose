@@ -22,7 +22,6 @@
             let url = `https://api.themoviedb.org/3/search/movie?api_key=${APIKey}&query=${title}`;
             console.log(url);
             return $http.get(url).then(function (response) {
-                console.log(response.data.results);
                 setData(response.data.results);
             });
             
@@ -32,7 +31,6 @@
             let url = `https://api.themoviedb.org/3/discover/movie?api_key=${APIKey}&vote_average.gte=${rating}&sort_by=vote_average.asc`;
             console.log(url);
             return $http.get(url).then(function (response) {
-                console.log(response.data.results);
                 setData(response.data.results);
             });
             
@@ -42,31 +40,29 @@
             let url = `https://api.themoviedb.org/3/discover/movie?api_key=${APIKey}&release_date.lte=${year}&sort_by=release_date.desc`;
             console.log(url);
             return $http.get(url).then(function (response) {
-                console.log(response.data.results);
                 setData(response.data.results);
             });
             
         };
-        //Grab Individual API Data
-        const moreInfo = function () {
-            let 
-            setData(response.data.results);
+
+        const removie = function(index){
+            wl.splice(index, 1);
         };
 
             const getDetails = function () {
                 return details;
             }
 
-            const setDetails = function (d) {
-                let details = d;
+            const setDetails = function (moreDetails) {
+                details = moreDetails;
             }
             const getList = function() {
                 return wl;
             }
             const addList = function(newwl){
                 wl.push(newwl);
-                console.log(newwl);
             }
+            
 
         return {
             getData,
@@ -74,9 +70,11 @@
             searchMovies,
             searchMoviesByYear,
             searchByRating,
-            moreInfo
             getList,
-            addList
+            addList,
+            getDetails,
+            setDetails,
+            removie
         };
     }
     angular

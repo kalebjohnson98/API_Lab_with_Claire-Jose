@@ -4,7 +4,8 @@
         controller: function (movieService) {
             let vm = this;
             vm.movies = movieService.getData();
-            console.log(vm.movies);
+
+            //add to watchlist feature
             vm.list = movieService.getList();
             vm.listinfo = function(index) {
                 let x =
@@ -14,16 +15,31 @@
                 date: vm.movies[index].release_date}
                 
                 vm.addtowl = movieService.addList(x);
-            }
+            };
+
+            //more info feature
+            vm.info = movieService.getDetails();
+            vm.movieInfo = function(index) {
+                let d =
+                {image: vm.movies[index].poster_path,
+                title: vm.movies[index].title,
+                rating: vm.movies[index].vote_average,
+                date: vm.movies[index].release_date,
+                summary: vm.movies[index].overview}
+                
+                vm.infoPage = movieService.setDetails(d);
+            };
 
         },
-        template: `<p>Search here to filter</p>
+        template: `<a href=#!/home><button> Home </button></a>
+            <a href=#!/watchlist><button> Go to Watchlist </button></a>
+            <p>Search here to filter</p>
             <input ng-model="searchText">
             <div ng-repeat="m in $ctrl.movies | filter: searchText track by $index">
             <h2>Title: {{m.title}}</h2>
             <p>Rating: {{m.vote_average}}</p>
             <p>Year Released: {{m.release_date}}</p>
-            <a href="#!/moreInfo"><button>More Info</button></a>
+            <a href="#!/moreInfo"><button ng-click="$ctrl.movieInfo($index)">More Info</button></a>
             <button ng-click="$ctrl.listinfo($index)" ng-model="$index">Add to Watchlist</button>
 
             </div>      

@@ -12,9 +12,10 @@
           })
           .when("/moreInfo", {
             template: "<more-info></more-info>"
+          })
           .when("/watchlist", {
             template: "<watchlist></watchlist>"
           })
-          .otherwise({ redirectTo: "/home" });
+          .otherwise({ redirectTo: "/home" })
       });
   }
