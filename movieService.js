@@ -3,8 +3,8 @@
     function movieService($http) {
         let data = {
             title: "Tommy Boi",
-            length: "2 hours",
-            movieId: "1"
+            year: "1998",
+            rating: "0"
         }
         let details = {};
 
@@ -26,14 +26,30 @@
                 //console.log(response.data.results[0]);
                 setData(response.data.results);
             });
+            
         };
 
-        const getMovieDetail = function (movieId) {
-            let url = `https://api.themoviedb.org/3/movie/${movieId}?api_key=${APIKey}`;
+        const searchByRating = function (rating) {
+            let url = `https://api.themoviedb.org/3/discover/movie?api_key=${APIKey}&vote_average.gte=${rating}&sort_by=vote_average.asc`;
+            console.log(url);
             return $http.get(url).then(function (response) {
-                console.log(response);
+                console.log(response.data.results);
+                //console.log(response.data.results[0]);
                 setData(response.data.results);
             });
+            
+        };
+
+        const searchMoviesByYear = function (year) {
+            let url = `https://api.themoviedb.org/3/discover/movie?api_key=${APIKey}&release_date.lte=${year}&sort_by=release_date.desc`;
+            console.log(url);
+            return $http.get(url).then(function (response) {
+                console.log(response.data.results);
+                //console.log(response.data.results[0]);
+                setData(response.data.results);
+            });
+            
+        };
 
             const getDetails = function () {
                 return details;
@@ -43,12 +59,12 @@
                 let details = d;
             }
 
-        }
-
         return {
             getData,
             setData,
-            searchMovies
+            searchMovies,
+            searchMoviesByYear,
+            searchByRating
         };
     }
     angular
