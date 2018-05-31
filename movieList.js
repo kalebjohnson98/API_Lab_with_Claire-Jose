@@ -7,11 +7,12 @@
             console.log(vm.movies);
             vm.list = movieService.getList();
             vm.listinfo = function(index) {
-
                 let x =
-                {title: vm.movies[index].title,
+                {image: vm.movies[index].poster_path,
+                title: vm.movies[index].title,
                 rating: vm.movies[index].vote_average,
                 date: vm.movies[index].release_date}
+                
                 vm.addtowl = movieService.addList(x);
             }
 
@@ -25,7 +26,7 @@
             <p>Rating: {{m.vote_average}}</p>
             <button>More Info</button>
             <button ng-click="$ctrl.listinfo($index)" ng-model="$index">Add to Watchlist</button>
-            <button ng-click="$ctrl.print($index)">test</button>
+
             </div>      
             `
     };
