@@ -10,6 +10,9 @@
           .when("/movie", {
             template: "<movie></movie>"
           })
+          .when("/moreInfo", {
+            template: "<more-info></more-info>"
+          })
           .otherwise({ redirectTo: "/home" });
       });
   }
