@@ -7,7 +7,7 @@
             rating: "0"
         }
         let details = {};
-
+        let wl = [];
         let APIKey = "a53a6bc42972a9ac76757aa3b5089827";
         //Give me data
         const getData = function () {
@@ -60,6 +60,13 @@
             const setDetails = function (d) {
                 let details = d;
             }
+            const getList = function() {
+                return wl;
+            }
+            const addList = function(newwl){
+                wl.push(newwl);
+                console.log(newwl);
+            }
 
         return {
             getData,
@@ -68,6 +75,8 @@
             searchMoviesByYear,
             searchByRating,
             moreInfo
+            getList,
+            addList
         };
     }
     angular
