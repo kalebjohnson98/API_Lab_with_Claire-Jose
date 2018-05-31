@@ -1,24 +1,19 @@
 <html ng-app="movie">
 
 <head>
-    <link type="text/css" href="style.css" ref="stylesheet" />
-    <meta name="viewport" content="width=device-width, initial-scale=1">
 
 </head>
-
 <body>
-    <h1>Cool Name</h1>
-    <search-criteria></search-criteria>
 
 
-    <!-- <ng-view></ng-view> -->
-
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+    <ng-view></ng-view>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.10/angular.min.js"></script>
+    <script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.6.5/angular-route.js'></script>
     <script src="module.js"></script>
-    <script src="apiService.js"></script>
-    <script src="searchCriteria.js"></script>
-    <!-- <script src="movieList.js"></script>
-    <script src="watchlistPage.js"></script> -->
+    <script src="MovieService.js"></script>
+    <script src="MovieList.js"></script>
+    <script src="Home.js"></script>
+    <script src="Routing.js"></script>
 </body>
 
 </html>
