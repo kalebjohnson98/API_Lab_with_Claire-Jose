@@ -31,10 +31,14 @@
             };
 
         },
-        template: `<a href=#!/home><button> Home </button></a>
+        template: `<div class="btnSetup">
+            <a href=#!/home><button> Home </button></a>
             <a href=#!/watchlist><button> Go to Watchlist </button></a>
-            <p>Search here to filter</p>
-            <input ng-model="searchText">
+            </div>
+            <h1 class="header">Movie List</h1>
+            <div id="filter">
+            <input placeholder="Search here to filter" ng-model="searchText">
+            </div>
             <div id="listSetup">
             <div id="movieList" ng-repeat="m in $ctrl.movies | filter: searchText track by $index">
             <h2>Title: {{m.title}}</h2>
