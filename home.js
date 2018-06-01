@@ -7,7 +7,7 @@
         </div>
         <h1 class="header"> Welcome to Movie Genie </h1>
         <div id="home">
-        <p id="bigger">Please type in a movie to search for here:</p>
+        <p id="bigger">Choose One of the Category's to Search By:</p>
         <div class="searchBars">
         <input ng-model="$ctrl.title" placeholder="Movie Title"/> 
         <button ng-click="$ctrl.getMovie()"> Search by Title </button>
