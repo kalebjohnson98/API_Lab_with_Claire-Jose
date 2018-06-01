@@ -1,8 +1,8 @@
 "use strict";
 {
     let home = {
-        template: `<h1> Welcome to my Movie Page </h1>
-        <a href="#!/watchlist"><button>Go to watchlist</button></a>
+        template: `<h1 ng-class="header"> Welcome to Movie Genie </h1>
+        <a href="#!/watchlist"><button>Go to Watchlist</button></a>
         <p>Please type in a movie to search for here:</p>
         <input ng-model="$ctrl.title" placeholder="Movie Title"/> 
         <button ng-click="$ctrl.getMovie()"> Search by Title </button>
