@@ -1,8 +1,10 @@
 "use strict";
 {
     let watchlist = {
-        template: `<a href=#!/home><button> Home </button></a>
+        template: `<div class="btnSetup">
+        <a href=#!/home><button> Home </button></a>
         <a href=#!/movie><button> Recent Search </button></a>
+        </div>
         <h1 class="header">Watchlist</h1>
         <div id="wlAlign">
         <div id="wlSetup" ng-repeat="n in $ctrl.list" | taskFilter track by $index>
