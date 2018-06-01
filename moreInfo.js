@@ -11,7 +11,6 @@
                 title: vm.info.title,
                 rating: vm.info.rating,
                 date: vm.info.date}
-                    console.log(x);
                 vm.addtowl = movieService.addList(x);
             };
             

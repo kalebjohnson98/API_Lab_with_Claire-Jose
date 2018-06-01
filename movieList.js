@@ -7,25 +7,25 @@
 
             //add to watchlist feature
             vm.list = movieService.getList();
-            vm.listinfo = function(index) {
+            vm.listinfo = function(movie) {
                 let x =
-                {image: vm.movies[index].poster_path,
-                title: vm.movies[index].title,
-                rating: vm.movies[index].vote_average,
-                date: vm.movies[index].release_date}
+                {image: movie.poster_path,
+                title: movie.title,
+                rating: movie.vote_average,
+                date: movie.release_date}
 
                 vm.addtowl = movieService.addList(x);
             };
 
             //more info feature
             vm.info = movieService.getDetails();
-            vm.movieInfo = function(index) {
+            vm.movieInfo = function(movie) {
                 let d =
-                {image: vm.movies[index].poster_path,
-                title: vm.movies[index].title,
-                rating: vm.movies[index].vote_average,
-                date: vm.movies[index].release_date,
-                summary: vm.movies[index].overview}
+                {image: movie.poster_path,
+                title: movie.title,
+                rating: movie.vote_average,
+                date: movie.release_date,
+                summary: movie.overview}
                 
                 vm.infoPage = movieService.setDetails(d);
             };
@@ -44,8 +44,8 @@
             <h2>Title: {{m.title}}</h2>
             <p>Rating: {{m.vote_average}}</p>
             <p>Year Released: {{m.release_date}}</p>
-            <a href="#!/moreInfo"><button ng-click="$ctrl.movieInfo($index)">More Info</button></a>
-            <button ng-click="$ctrl.listinfo($index)" ng-model="$index">Add to Watchlist</button>
+            <a href="#!/moreInfo"><button ng-click="$ctrl.movieInfo(m)">More Info</button></a>
+            <button ng-click="$ctrl.listinfo(m)">Add to Watchlist</button>
             </div>
             </div>      
             `
