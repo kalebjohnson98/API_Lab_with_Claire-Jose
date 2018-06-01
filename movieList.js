@@ -12,7 +12,7 @@
                 title: vm.movies[index].title,
                 rating: vm.movies[index].vote_average,
                 date: vm.movies[index].release_date}
-                
+
                 vm.addtowl = movieService.addList(x);
             }
 
