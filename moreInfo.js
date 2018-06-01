@@ -4,6 +4,16 @@
         controller: function (movieService) {
             let vm = this;
             vm.info = movieService.getDetails();
+            vm.xyz = movieService.getList();
+            vm.listinfo = function() {
+                let x =
+                {image: vm.info.image,
+                title: vm.info.title,
+                rating: vm.info.rating,
+                date: vm.info.date}
+                    console.log(x);
+                vm.addtowl = movieService.addList(x);
+            };
             
         },
         template: `<div class="btnSetup">
@@ -20,6 +30,8 @@
             <p>Rating: {{$ctrl.info.rating}}</p>
             <p>Release date: {{$ctrl.info.date}}</p>
             <p>Summary: {{$ctrl.info.summary}}</p>
+            <button ng-click="$ctrl.listinfo()">Add to Watchlist</button></br>
+            <a href="#!/watchlist"><button>Go to Watchlist</button></a>
             </div>
             </div>
             `
