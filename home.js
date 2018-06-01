@@ -1,7 +1,8 @@
 "use strict";
 {
     let home = {
-        template: `<h1 ng-class="header"> Welcome to Movie Genie </h1>
+        template: `<h1 class="header"> Welcome to Movie Genie </h1>
+        <div id="home">
         <a href="#!/watchlist"><button>Go to Watchlist</button></a>
         <p>Please type in a movie to search for here:</p>
         <input ng-model="$ctrl.title" placeholder="Movie Title"/> 
@@ -12,6 +13,7 @@
         <br>
         <input ng-model="$ctrl.rating" placeholder="Movie Rating"/>
         <button ng-click="$ctrl.getMovieByRating()"> Search by Rating </button>
+        </div>
         `,
         controller: function (movieService, $location) {
             let vm = this;

@@ -1,4 +1,77 @@
+html {
+    background-image: url(http://ibffnashville.com/wp-content/uploads/2015/04/COLD-EDGE-BACKGROUND-1.jpg);
+    height: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
 .header {
     text-align: center;
+    color: red;
+    font-size: 48px;
     font-family: 'Francois One', sans-serif;
+}
+input {
+    margin-bottom: 5px;
+
+    border: 2px solid black;
+    border-radius: 7px;
+    font-family: 'Francois One', sans-serif;
+    padding-left: 5px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    width: 300px;
+}
+button {
+    border: 2px solid gold;
+    background-color: white;
+    font-family: 'Francois One', sans-serif;
+    border-radius: 7px;
+    width: 200px;
+}
+#home {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+#listsetup {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+#movieList {
+    border: 2px solid black;
+    border-radius: 10px;
+    background-color: rgba(255,255,255, 0.4);
+    padding: 10px 10px;
+    margin-bottom: 10px;
+    margin-right: 10px;
+    font-family: 'Francois One', sans-serif;
+    width: 45%;
+}
+p {
+    font-family: 'Francois One', sans-serif;
+}
+h3 {
+    font-family: 'Francois One', sans-serif;
+}
+#image {
+    height: 300px;
+    width: 200px;
+}
+#wlAlign {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+#wlSetup {
+    display: flex;
+    border: 2px solid gold;
+    border-radius: 10px;
+    width: 45%;
+    margin: 10px 10px;
+    padding: 10px 10px;
+    background-color: rgba(255,255,255, 0.4);
+}
+#wlItems {
+    margin-left: 10px;
 }
